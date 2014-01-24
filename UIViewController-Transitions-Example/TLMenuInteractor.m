@@ -13,6 +13,7 @@
 @property (nonatomic, assign, getter = isInteractive) BOOL interactive;
 @property (nonatomic, assign, getter = isPresenting) BOOL presenting;
 @property (nonatomic, strong) id<UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic, readwrite, getter = isCanceled) BOOL canceled;
 
 @end
 
@@ -130,6 +131,7 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+	self.canceled = NO;
     if (self.interactive) {
         // nop as per documentation
     }
@@ -174,6 +176,7 @@
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
 
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+	self.canceled = NO;
     self.transitionContext = transitionContext;
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -192,6 +195,10 @@
     else {
         [transitionContext.containerView addSubview:toViewController.view];
         [transitionContext.containerView addSubview:fromViewController.view];
+		[UIView animateWithDuration:0.2 animations:^{
+			[fromViewController setNeedsStatusBarAppearanceUpdate];
+		}];
+	
     }
     
     toViewController.view.frame = endFrame;
@@ -264,9 +271,11 @@
     }
     else {
         CGRect endFrame = [[transitionContext containerView] bounds];
-        
+		self.canceled = YES;
+
         [UIView animateWithDuration:0.5f animations:^{
             fromViewController.view.frame = endFrame;
+			[fromViewController setNeedsStatusBarAppearanceUpdate];
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:NO];
         }];

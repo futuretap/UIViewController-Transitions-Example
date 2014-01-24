@@ -29,6 +29,7 @@
 		5E8B4B931790454A006BFAB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8B4B721790454A006BFAB2 /* UIKit.framework */; };
 		5E8B4B9B1790454A006BFAB2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E8B4B991790454A006BFAB2 /* InfoPlist.strings */; };
 		5E8B4B9D1790454A006BFAB2 /* UIViewController_Transitions_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B4B9C1790454A006BFAB2 /* UIViewController_Transitions_ExampleTests.m */; };
+		AAC809921892C23D0046711E /* FTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC809911892C23D0046711E /* FTNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		5E8B4B981790454A006BFAB2 /* UIViewController-Transitions-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIViewController-Transitions-ExampleTests-Info.plist"; sourceTree = "<group>"; };
 		5E8B4B9A1790454A006BFAB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E8B4B9C1790454A006BFAB2 /* UIViewController_Transitions_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewController_Transitions_ExampleTests.m; sourceTree = "<group>"; };
+		AAC809901892C23D0046711E /* FTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTNavigationController.h; sourceTree = "<group>"; };
+		AAC809911892C23D0046711E /* FTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				5E8B4B871790454A006BFAB2 /* TLDetailViewController.m */,
 				5E67527117985B6D00601F42 /* TLMenuViewController.h */,
 				5E67527217985B6D00601F42 /* TLMenuViewController.m */,
+				AAC809901892C23D0046711E /* FTNavigationController.h */,
+				AAC809911892C23D0046711E /* FTNavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E8B4B851790454A006BFAB2 /* TLMasterViewController.m in Sources */,
+				AAC809921892C23D0046711E /* FTNavigationController.m in Sources */,
 				5E6543BB179EB77000ED0C76 /* TLMenuDynamicInteractor.m in Sources */,
 				5E6752691798570100601F42 /* TLTransitionAnimator.m in Sources */,
 				5E8B4B881790454A006BFAB2 /* TLDetailViewController.m in Sources */,

@@ -14,6 +14,7 @@
 -(id)initWithParentViewController:(UIViewController *)viewController;
 
 @property (nonatomic, readonly) UIViewController *parentViewController;
+@property (nonatomic, readonly, getter = isCanceled) BOOL canceled;
 
 -(void)presentMenu; // Presents the menu non-interactively
 
