@@ -46,6 +46,12 @@
     [self.view addGestureRecognizer:gestureRecognizer];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+	[self.navigationController setNeedsStatusBarAppearanceUpdate];
+}
+
 -(void)doneWasPressed:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

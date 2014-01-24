@@ -80,9 +80,11 @@
     self.presenting = YES;
     
     TLMenuViewController *viewController = [[TLMenuViewController alloc] initWithPanTarget:self];
-    viewController.modalPresentationStyle = UIModalPresentationCustom;
-    viewController.transitioningDelegate = self;
-    [self.parentViewController presentViewController:viewController animated:YES completion:nil];
+    viewController.title = @"Menu";
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:viewController];
+    nc.modalPresentationStyle = UIModalPresentationFullScreen;
+    nc.transitioningDelegate = self;
+    [self.parentViewController presentViewController:nc animated:YES completion:nil];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate Methods
